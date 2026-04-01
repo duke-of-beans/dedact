@@ -1,0 +1,249 @@
+# DEDACT - Document Extraction, De-Redaction, and Analysis Capability Tool
+# Project Identity & Core Principles
+# Version: 1.0.0
+# Created: 2025-02-03
+# Status: Foundation Phase
+
+project:
+  name: "DEDACT"
+  full_name: "Document Extraction, De-Redaction, and Analysis Capability Tool"
+  tagline: "Revealing what should have stayed hidden"
+  version: "1.0.0"
+  status: "Foundation Phase"
+  license: "PRIVATE - Not for public distribution"
+  
+identity:
+  purpose: |
+    Automated recovery of improperly redacted content from PDF corpuses.
+    Universal document forensics platform for investigative research.
+  
+  philosophy:
+    - "Build it right the first time - no MVPs, full functionality"
+    - "Lean-out development - use existing verified tools, don't rebuild"
+    - "Open source stack - zero paid dependencies"
+    - "Modular architecture - every component standalone and reusable"
+    - "Research-grade rigor - academic verification standards"
+  
+  principles:
+    foundation_out: "Backend infrastructure before surface features"
+    zero_debt: "No temporary solutions, mocks, stubs, or placeholders"
+    lean_integration: "Build on existing verified work, contribute back"
+    private_default: "Powerful weapons stay private unless vetted"
+    complete_delivery: "100% functional from day one"
+
+core_capabilities:
+  primary:
+    - "PDF layer separation and text stream extraction"
+    - "Visual redaction vs. text layer comparison"
+    - "Metadata forensics and author tracking"
+    - "OCR processing for image-based documents"
+    - "Entity extraction (names, orgs, locations, dates)"
+    - "Network graph generation from recovered content"
+    - "Pattern matching and anomaly detection"
+  
+  secondary:
+    - "Batch processing (10s to millions of documents)"
+    - "Multi-format support (PDF, DOCX, images, scans)"
+    - "Database integration (PostgreSQL, Neo4j, Elasticsearch)"
+    - "Deduplication and quality assessment"
+    - "Timeline generation and relationship mapping"
+    - "Cross-corpus verification and integration"
+
+technology_stack:
+  core_dependencies:
+    - "PyPDF2 / pypdf - PDF manipulation (open source)"
+    - "pdf2image - PDF to image conversion (open source)"
+    - "Tesseract OCR - Text extraction (open source)"
+    - "spaCy - NLP and entity recognition (Apache 2.0)"
+    - "ExifTool - Metadata extraction (open source)"
+  
+  optional_enhancements:
+    - "PostgreSQL - Full-text search and storage"
+    - "Neo4j Community - Network graph database"
+    - "Elasticsearch - Real-time document indexing"
+    - "Hugging Face models - Pre-trained NLP (free inference)"
+  
+  integration_targets:
+    existing_databases:
+      - "ICIJ Offshore Leaks Database (person-to-person networks)"
+      - "LittleSis (corporate/political relationships)"
+      - "OpenCorporates (company ownership data)"
+      - "Wikidata (structured entity data)"
+    
+    note: "Add to existing verified databases, don't replace them"
+
+architecture_principles:
+  modularity:
+    - "Every component standalone and testable"
+    - "Configuration-driven behavior"
+    - "Plugin architecture for extensibility"
+    - "Clear interfaces between modules"
+  
+  scalability:
+    - "Single document to millions"
+    - "Local processing to distributed"
+    - "Incremental processing with checkpoints"
+    - "Memory-efficient streaming"
+  
+  reliability:
+    - "Comprehensive error handling"
+    - "Graceful degradation"
+    - "Detailed logging and diagnostics"
+    - "Recovery from failures"
+
+use_cases:
+  primary_projects:
+    crisis_capitalism:
+      - "Congressional trading SEC disclosure redactions"
+      - "Defense contract FOIA responses"
+      - "Healthcare merger FTC filing redactions"
+      - "Lobbying disclosure client lists"
+      - "Corporate board minutes"
+    
+    epstein_corpus:
+      - "DOJ PDF releases (205 GB, 12 datasets)"
+      - "Court document analysis"
+      - "Network mapping from recovered names"
+      - "Timeline reconstruction"
+    
+    hirm:
+      - "Medical research paper redactions"
+      - "Clinical trial documents"
+      - "FDA approval documents"
+  
+  potential_expansions:
+    - "Panama Papers (2.6 TB)"
+    - "Pandora Papers (2.94 TB)"
+    - "FinCEN Files (financial crime reports)"
+    - "WikiLeaks diplomatic cables"
+    - "PACER federal court records"
+    - "SEC EDGAR filings"
+
+legal_ethical_framework:
+  status: "PRIVATE RESEARCH TOOL"
+  
+  restrictions:
+    - "Not for public distribution without legal review"
+    - "Enterprise/government deployment requires lawyer consultation"
+    - "Licensing framework must be developed before any public release"
+    - "Responsible disclosure guidelines required"
+  
+  safeguards:
+    - "Confidence scores for all recovered content"
+    - "Manual review workflows for sensitive data"
+    - "Watermarking for provenance tracking"
+    - "Chain of custody documentation"
+  
+  concerns:
+    - "Could expose victim identities (requires protective measures)"
+    - "Bad actor misuse potential (vetting required)"
+    - "Legal liability for content recovery (disclaimer insufficient)"
+    - "Ethical obligations vs. technical capabilities"
+  
+  decision: |
+    Build for personal research use. Future commercialization/publication
+    requires comprehensive legal review and robust protective framework.
+
+quality_standards:
+  code:
+    - "Type hints throughout (Python 3.10+)"
+    - "Comprehensive docstrings (Google style)"
+    - "Unit tests for all modules (pytest)"
+    - "Integration tests for workflows"
+    - "Performance benchmarks documented"
+  
+  documentation:
+    - "Architecture decision records"
+    - "API documentation (auto-generated)"
+    - "User guides with examples"
+    - "Troubleshooting guides"
+    - "Security considerations"
+  
+  research:
+    - "Source verification protocols"
+    - "Confidence interval reporting"
+    - "Reproducibility requirements"
+    - "Bias mitigation frameworks"
+    - "Falsification criteria"
+
+integration_points:
+  global_research:
+    - "Research Veritas v1.0 methodology compliance"
+    - "Crisis Capitalism Research Protocols v3.0.2"
+    - "Investigative Leads documentation standards"
+    - "T1/T2 source verification requirements"
+  
+  development_ecosystem:
+    - "Desktop Commander for file operations"
+    - "KERNL for session management"
+    - "SHIM for code quality analysis"
+    - "Standard git workflows"
+  
+  data_management:
+    - "MCP server integration for zero-token corpus access"
+    - "JSON output for programmatic consumption"
+    - "Database loaders for PostgreSQL/Neo4j"
+    - "Export formats (CSV, HTML, Markdown)"
+
+naming_conventions:
+  files:
+    config: "UPPERCASE_WITH_UNDERSCORES.yaml"
+    modules: "lowercase_with_underscores.py"
+    classes: "PascalCase"
+    functions: "snake_case"
+  
+  documentation:
+    specs: "SYSTEM_COMPONENT_NAME.md"
+    guides: "lowercase-with-hyphens.md"
+    logs: "YYYY-MM-DD-description.log"
+
+version_control:
+  strategy: "Semantic versioning (MAJOR.MINOR.PATCH)"
+  current: "1.0.0"
+  milestones:
+    "1.0.0": "Foundation and architecture complete"
+    "1.1.0": "Core extraction engine operational"
+    "1.2.0": "Entity extraction and network analysis"
+    "1.3.0": "Database integration complete"
+    "2.0.0": "Multi-corpus processing and advanced analytics"
+
+metadata:
+  created: "2025-02-03"
+  author: "David Kirsch"
+  organization: "Fine Print Press LLC"
+  contact: "Internal research tool"
+  
+locked_decisions:
+  - "Python as primary language (ecosystem mature, libraries available)"
+  - "CLI-first interface (automation friendly, developer focused)"
+  - "JSON as primary data interchange format"
+  - "Open source stack only (zero paid dependencies)"
+  - "Private distribution until legal framework established"
+  - "Modular architecture (every component standalone)"
+  - "Research-grade verification standards"
+
+open_questions:
+  - "Web interface priority? (future phase, not MVP)"
+  - "Commercial licensing model if public? (requires legal consultation)"
+  - "Enterprise features specification? (deferred until demand)"
+  - "Academic publication strategy? (methodology paper potential)"
+  - "Community contribution framework? (if open sourced)"
+
+next_actions:
+  immediate:
+    - "Complete DEDACT_PROTOCOLS.md (methodology)"
+    - "Complete SYSTEM_ARCHITECTURE.md (technical design)"
+    - "Build core extraction engine"
+    - "Test on Epstein Dataset 5 (120 PDFs, complete)"
+  
+  near_term:
+    - "Process Epstein Datasets 1-7 (~4.5 GB)"
+    - "Integrate with Crisis Capitalism corpus"
+    - "Document all architectural decisions"
+    - "Create comprehensive test suite"
+  
+  future:
+    - "Large dataset processing (Datasets 8-12, ~204 GB)"
+    - "Advanced analytics and ML models"
+    - "Multi-project integration templates"
+    - "Commercial viability assessment"

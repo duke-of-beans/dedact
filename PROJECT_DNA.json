@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "slug": "dedact",
+  "name": "DEDACT",
+  "brain_entity_id": "NEEDS_BRAIN_ENTITY_SEED",
+  "type": "tool",
+  "owner": "personal",
+  "environment": "research",
+  "display_register": "project",
+  "tier": 2,
+  "description": "DEDACT (Document Extraction, De-Redaction, and Analysis Capability Tool) is a forensic PDF analysis tool for investigative research. Feeds the Fine Print / National Razor Dashboard.",
+  "purpose": "Extract, analyze, and de-redact documents for investigative journalism and crisis capitalism research.",
+  "success_criteria": [
+    "Integrated into Fine Print Dashboard pipeline",
+    "De-redaction pipeline functional"
+  ],
+  "upstream": [],
+  "downstream": [
+    "fine-print-dashboard"
+  ],
+  "peers": [
+    "fine-print-dashboard"
+  ],
+  "repo": null,
+  "local_url": null,
+  "vercel_url": null,
+  "tech_stack": [],
+  "language": null,
+  "tagline": "Forensic PDF analysis for investigative research.",
+  "philosophy": [],
+  "notes": null,
+  "key_decisions": [],
+  "created_date": "2026-03-31",
+  "last_updated": "2026-03-31",
+  "author": "dk-001"
+}

@@ -1,0 +1,63 @@
+# Epstein Corpus Configuration
+# MAXIMUM victim protection protocols
+
+corpus_id: "epstein_corpus"
+corpus_path: "D:/Research/FINE PRINT/epstein_documents/yung_megafone/"
+
+processing:
+  confidence_threshold: 0.70  # Higher threshold for sensitive content
+  ocr_enabled: true
+  parallel_workers: 4  # Lower to ensure quality
+  extraction_depth: "forensic"  # Maximum extraction
+
+# CRITICAL: Victim Protection
+victim_protection:
+  enabled: true
+  auto_flag_age_references: true
+  manual_review_required: true
+  pseudonymization: true
+  sensitive_patterns:
+    - age_under_18
+    - personal_identifiers
+    - contact_information
+
+entity_types:
+  - PERSON       # All individuals (flagged for review)
+  - ORG          # Companies, institutions
+  - GPE          # Locations
+  - MONEY        # Financial transactions
+  - DATE         # Timeline events
+  - PHONE        # Protected
+  - EMAIL        # Protected
+  - ADDRESS      # Protected
+
+# Phased Processing Plan
+phased_processing:
+  phase_1:
+    datasets: [5, 6, 7]
+    priority: "immediate"
+  phase_2:
+    datasets: [1, 2, 3, 4]
+    requires: "fiber_internet"
+  phase_3:
+    datasets: [8, 9, 10, 11, 12]
+    requires: "external_hard_drive"
+
+network_analysis:
+  enabled: true
+  focus:
+    - co_occurrence
+    - temporal_ordering
+    - geographic_clustering
+    - financial_flows
+
+output:
+  formats:
+    - json
+    - csv
+  directory: "output/epstein"
+  access_control: "restricted"
+
+integration:
+  mcp_server: false  # Too sensitive for general corpus
+  external_dbs: []   # No external validation

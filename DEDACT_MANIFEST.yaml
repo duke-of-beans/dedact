@@ -1,0 +1,448 @@
+# DEDACT Component Manifest
+# Complete Registry of All System Components
+# Version: 1.0.0
+# Created: 2025-02-03
+
+manifest_version: "1.0.0"
+dedact_version: "1.0.0"
+status: "Foundation Phase"
+
+# PHASE 1: FOUNDATION DOCUMENTS (COMPLETE)
+foundation:
+  source_of_truth:
+    - file: "DEDACT_DNA.yaml"
+      status: COMPLETE
+      purpose: "Project identity, core principles, locked decisions"
+      dependencies: []
+    
+    - file: "DEDACT_PROTOCOLS.md"
+      status: COMPLETE
+      purpose: "Complete methodology for redaction recovery"
+      dependencies: ["DEDACT_DNA.yaml"]
+    
+    - file: "RESEARCH_INTEGRATION.md"
+      status: COMPLETE
+      purpose: "Global positioning and cross-project architecture"
+      dependencies: ["DEDACT_DNA.yaml", "DEDACT_PROTOCOLS.md"]
+    
+    - file: "DEDACT_MANIFEST.yaml"
+      status: COMPLETE
+      purpose: "Component registry and build tracker"
+      dependencies: ["DEDACT_DNA.yaml"]
+
+# PHASE 2: ARCHITECTURE (PENDING)
+architecture:
+  technical_design:
+    - file: "SYSTEM_ARCHITECTURE.md"
+      status: PENDING
+      purpose: "Technical design, module specifications, data flow"
+      dependencies: ["DEDACT_PROTOCOLS.md", "RESEARCH_INTEGRATION.md"]
+      components:
+        - overview_diagrams
+        - module_specifications
+        - data_flow_architecture
+        - technology_stack_details
+        - integration_interfaces
+    
+    - file: "MODULE_SPECIFICATIONS.md"
+      status: PENDING
+      purpose: "Detailed specs for every component"
+      dependencies: ["SYSTEM_ARCHITECTURE.md"]
+      components:
+        - ingestion_module
+        - detection_module
+        - extraction_module
+        - analysis_module
+        - storage_module
+        - integration_module
+    
+    - file: "DATA_FLOW.md"
+      status: PENDING
+      purpose: "How data moves through the system"
+      dependencies: ["SYSTEM_ARCHITECTURE.md", "MODULE_SPECIFICATIONS.md"]
+      components:
+        - pipeline_diagrams
+        - state_transitions
+        - checkpoint_strategy
+        - error_handling_flows
+
+  supporting_docs:
+    - file: "API_REFERENCE.md"
+      status: PENDING
+      purpose: "Programmatic interface documentation"
+      dependencies: ["MODULE_SPECIFICATIONS.md"]
+    
+    - file: "CONFIGURATION_GUIDE.md"
+      status: PENDING
+      purpose: "All configuration options explained"
+      dependencies: ["SYSTEM_ARCHITECTURE.md"]
+    
+    - file: "DATABASE_SCHEMA.md"
+      status: PENDING
+      purpose: "PostgreSQL and Neo4j schema definitions"
+      dependencies: ["SYSTEM_ARCHITECTURE.md"]
+
+# PHASE 3: DEVELOPMENT (PENDING)
+development:
+  core_modules:
+    - module: "ingestion"
+      path: "src/ingestion/"
+      status: PENDING
+      dependencies: []
+      files:
+        - file_discovery.py
+        - quality_assessment.py
+        - deduplication.py
+        - format_detection.py
+      tests:
+        - test_ingestion.py
+    
+    - module: "detection"
+      path: "src/detection/"
+      status: PENDING
+      dependencies: ["ingestion"]
+      files:
+        - visual_layer_analysis.py
+        - text_layer_analysis.py
+        - redaction_correlation.py
+        - confidence_scoring.py
+      tests:
+        - test_detection.py
+    
+    - module: "extraction"
+      path: "src/extraction/"
+      status: PENDING
+      dependencies: ["detection"]
+      files:
+        - direct_text_recovery.py
+        - ocr_processing.py
+        - metadata_extraction.py
+        - fragment_reconstruction.py
+      tests:
+        - test_extraction.py
+    
+    - module: "analysis"
+      path: "src/analysis/"
+      status: PENDING
+      dependencies: ["extraction"]
+      files:
+        - entity_recognition.py
+        - pattern_matching.py
+        - relationship_mapping.py
+        - network_construction.py
+      tests:
+        - test_analysis.py
+    
+    - module: "storage"
+      path: "src/storage/"
+      status: PENDING
+      dependencies: ["analysis"]
+      files:
+        - database_loaders.py
+        - export_generators.py
+        - cross_corpus_integration.py
+      tests:
+        - test_storage.py
+    
+    - module: "integration"
+      path: "src/integration/"
+      status: PENDING
+      dependencies: ["storage"]
+      files:
+        - mcp_integration.py
+        - external_db_connectors.py
+        - entity_resolution.py
+      tests:
+        - test_integration.py
+
+  supporting_code:
+    - file: "src/utils/logging_config.py"
+      status: PENDING
+      purpose: "Comprehensive logging framework"
+    
+    - file: "src/utils/error_handling.py"
+      status: PENDING
+      purpose: "Error classification and handling"
+    
+    - file: "src/utils/checkpoint_manager.py"
+      status: PENDING
+      purpose: "Checkpoint and recovery system"
+    
+    - file: "src/config/config_loader.py"
+      status: PENDING
+      purpose: "Configuration file parsing and validation"
+    
+    - file: "src/models/data_models.py"
+      status: PENDING
+      purpose: "Data classes for all entities"
+
+  cli_interface:
+    - file: "src/cli/dedact.py"
+      status: PENDING
+      purpose: "Main CLI entry point"
+      commands:
+        - process (process documents)
+        - analyze (run analysis on existing data)
+        - export (generate exports)
+        - status (check processing status)
+        - config (manage configuration)
+    
+    - file: "src/cli/commands/"
+      status: PENDING
+      purpose: "Individual command implementations"
+      files:
+        - process_cmd.py
+        - analyze_cmd.py
+        - export_cmd.py
+        - status_cmd.py
+        - config_cmd.py
+
+  configuration:
+    - file: "config/default.yaml"
+      status: PENDING
+      purpose: "Default configuration"
+    
+    - file: "config/crisis_capitalism.yaml"
+      status: PENDING
+      purpose: "Crisis Capitalism project config"
+    
+    - file: "config/epstein_corpus.yaml"
+      status: PENDING
+      purpose: "Epstein corpus project config"
+    
+    - file: "config/hirm.yaml"
+      status: PENDING
+      purpose: "HIRM research project config"
+
+  testing:
+    - directory: "tests/"
+      status: PENDING
+      structure:
+        - unit/ (module-level tests)
+        - integration/ (workflow tests)
+        - fixtures/ (test data)
+        - performance/ (benchmarks)
+    
+    - file: "tests/conftest.py"
+      status: PENDING
+      purpose: "Pytest configuration and fixtures"
+    
+    - file: "tests/test_data/sample_redacted.pdf"
+      status: PENDING
+      purpose: "Test document with known redactions"
+
+  infrastructure:
+    - file: "requirements.txt"
+      status: PENDING
+      purpose: "Python dependencies"
+      dependencies:
+        - PyPDF2
+        - pdf2image
+        - pytesseract
+        - spacy
+        - psycopg2-binary
+        - neo4j
+        - pyyaml
+        - click
+        - pytest
+    
+    - file: "setup.py"
+      status: PENDING
+      purpose: "Package installation configuration"
+    
+    - file: ".gitignore"
+      status: PENDING
+      purpose: "Git ignore patterns"
+    
+    - file: "README.md"
+      status: PENDING
+      purpose: "Project overview and quick start"
+
+# PHASE 4: GLOBAL INTEGRATION (PENDING)
+global_integration:
+  crisis_capitalism:
+    - file: "integrations/crisis_capitalism/config.yaml"
+      status: PENDING
+      purpose: "CC-specific processing configuration"
+    
+    - file: "integrations/crisis_capitalism/entity_types.yaml"
+      status: PENDING
+      purpose: "CC-specific entity definitions"
+    
+    - file: "integrations/crisis_capitalism/pipeline.yaml"
+      status: PENDING
+      purpose: "CC processing pipeline"
+    
+    - file: "integrations/crisis_capitalism/README.md"
+      status: PENDING
+      purpose: "Integration guide for CC project"
+  
+  epstein_corpus:
+    - file: "integrations/epstein/config.yaml"
+      status: PENDING
+      purpose: "Epstein-specific configuration"
+    
+    - file: "integrations/epstein/victim_protection.yaml"
+      status: PENDING
+      purpose: "Victim protection rules"
+    
+    - file: "integrations/epstein/phased_processing.yaml"
+      status: PENDING
+      purpose: "Phase 1/2/3 dataset processing plan"
+    
+    - file: "integrations/epstein/README.md"
+      status: PENDING
+      purpose: "Integration guide for Epstein corpus"
+  
+  hirm:
+    - file: "integrations/hirm/config.yaml"
+      status: PENDING
+      purpose: "HIRM-specific configuration"
+    
+    - file: "integrations/hirm/medical_entities.yaml"
+      status: PENDING
+      purpose: "Medical-specific entity types"
+    
+    - file: "integrations/hirm/README.md"
+      status: PENDING
+      purpose: "Integration guide for HIRM"
+  
+  global_protocols:
+    - file: "integrations/GLOBAL_INTEGRATION.md"
+      status: PENDING
+      purpose: "How to integrate DEDACT with any project"
+      template: true
+
+# PROJECT STRUCTURE
+directory_structure:
+  root: "D:/Dev/dedact/"
+  structure:
+    - docs/ (all .md documentation)
+    - src/ (all source code)
+      - ingestion/
+      - detection/
+      - extraction/
+      - analysis/
+      - storage/
+      - integration/
+      - utils/
+      - config/
+      - models/
+      - cli/
+    - config/ (YAML configuration files)
+    - tests/ (test suite)
+    - integrations/ (project-specific integration configs)
+    - data/ (sample data for testing)
+    - scripts/ (utility scripts)
+    - logs/ (processing logs, not in git)
+    - output/ (generated outputs, not in git)
+
+# BUILD TRACKING
+build_status:
+  phase_1_foundation:
+    completion: 100%
+    files_complete: 4
+    files_total: 4
+    status: COMPLETE
+  
+  phase_2_architecture:
+    completion: 0%
+    files_complete: 0
+    files_total: 7
+    status: PENDING
+    next_file: "SYSTEM_ARCHITECTURE.md"
+  
+  phase_3_development:
+    completion: 0%
+    files_complete: 0
+    files_total: 50+
+    status: PENDING
+  
+  phase_4_integration:
+    completion: 0%
+    files_complete: 0
+    files_total: 13
+    status: PENDING
+
+# DEPENDENCIES
+external_dependencies:
+  required:
+    - Python: ">=3.10"
+    - Tesseract OCR: ">=5.0"
+    - PostgreSQL: ">=14.0"
+    - Neo4j Community: ">=5.0"
+  
+  optional:
+    - Elasticsearch: ">=8.0"
+    - ExifTool: ">=12.0"
+    - Google Cloud Vision API: "for enhanced OCR"
+
+# DEPLOYMENT TARGETS
+deployment:
+  local_development:
+    os: "Windows 11"
+    location: "D:/Dev/dedact/"
+    status: ACTIVE
+  
+  production_processing:
+    os: "Windows 11 / Linux"
+    location: "TBD"
+    status: PLANNED
+
+# VERSIONING STRATEGY
+versioning:
+  current: "1.0.0"
+  strategy: "Semantic (MAJOR.MINOR.PATCH)"
+  milestones:
+    "1.0.0": "Foundation complete, architecture designed"
+    "1.1.0": "Core extraction engine operational"
+    "1.2.0": "Entity extraction and network analysis"
+    "1.3.0": "Database integration complete"
+    "1.4.0": "Crisis Capitalism integration"
+    "1.5.0": "Epstein corpus Phase 1 processing"
+    "2.0.0": "Multi-corpus processing, advanced analytics"
+
+# QUALITY GATES
+quality_standards:
+  documentation:
+    - every_module_documented: REQUIRED
+    - api_reference_complete: REQUIRED
+    - user_guide_available: REQUIRED
+  
+  code:
+    - type_hints: REQUIRED
+    - docstrings: REQUIRED
+    - unit_tests: REQUIRED (>80% coverage)
+    - integration_tests: REQUIRED
+  
+  performance:
+    - benchmark_suite: REQUIRED
+    - memory_profiling: REQUIRED
+    - scalability_testing: REQUIRED
+
+# MAINTENANCE
+maintenance:
+  update_frequency: "As needed during development"
+  review_cycle: "Weekly during active development"
+  deprecation_policy: "12 month notice minimum"
+
+# CONTACT
+project_owner:
+  name: "David Kirsch"
+  organization: "Fine Print Press LLC"
+  role: "Primary Researcher"
+
+# NOTES
+notes:
+  - "This manifest is the single source of truth for build status"
+  - "Update after completing each component"
+  - "Use for crash recovery and session continuity"
+  - "Foundation phase complete - ready for architecture phase"
+
+# NEXT ACTIONS
+immediate_next_steps:
+  1: "Build SYSTEM_ARCHITECTURE.md"
+  2: "Build MODULE_SPECIFICATIONS.md"
+  3: "Build DATA_FLOW.md"
+  4: "Create directory structure"
+  5: "Begin core module implementation"

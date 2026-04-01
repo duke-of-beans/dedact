@@ -1,0 +1,133 @@
+# DEDACT Default Configuration
+# Version: 1.0.0
+
+project:
+  name: "default"
+  corpus_id: "default_corpus"
+  description: "Default DEDACT configuration"
+
+processing:
+  # Confidence threshold for including results
+  confidence_threshold: 0.60
+  
+  # Enable OCR processing
+  ocr_enabled: true
+  
+  # Number of parallel workers (0 = auto-detect CPU count)
+  parallel_workers: 0
+  
+  # Processing strategy
+  strategy: "parallel"  # sequential | parallel | distributed
+  
+  # Batch size for checkpointing
+  checkpoint_batch_size: 100
+
+# Entity types to extract
+entity_types:
+  - PERSON
+  - ORG
+  - GPE
+  - LOC
+  - DATE
+  - TIME
+  - MONEY
+  - PERCENT
+  - EMAIL
+  - PHONE
+
+# Relationship types to detect
+relationship_types:
+  - co_occurs_with
+  - owns
+  - employs
+  - pays
+  - located_in
+  - associated_with
+
+# Database configuration
+databases:
+  postgresql:
+    enabled: false
+    host: "localhost"
+    port: 5432
+    database: "dedact"
+    user: "dedact_user"
+    password: ""  # Set via environment variable
+  
+  neo4j:
+    enabled: false
+    uri: "bolt://localhost:7687"
+    user: "neo4j"
+    password: ""  # Set via environment variable
+  
+  sqlite:
+    enabled: true  # Lightweight default
+    path: "output/dedact.db"
+
+# OCR settings
+ocr:
+  engine: "tesseract"
+  language: "eng"
+  preprocessing: true
+  confidence_threshold: 0.60
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG | INFO | WARNING | ERROR | CRITICAL
+  console: true
+  file: true
+  log_dir: "logs"
+  format: "[%(asctime)s] [%(levelname)s] [%(module)s] %(message)s"
+
+# Paths
+paths:
+  input_dir: "data/input"
+  output_dir: "output"
+  temp_dir: "output/temp"
+  checkpoint_dir: "output/checkpoints"
+
+# External database connectors (optional)
+external_databases:
+  icij_offshore_leaks:
+    enabled: false
+    api_url: ""
+  
+  littlesis:
+    enabled: false
+    api_url: "https://littlesis.org/api"
+  
+  opencorporates:
+    enabled: false
+    api_url: "https://api.opencorporates.com"
+    api_key: ""  # Set via environment variable
+  
+  wikidata:
+    enabled: false
+    sparql_endpoint: "https://query.wikidata.org/sparql"
+
+# Victim protection (for sensitive corpuses)
+victim_protection:
+  enabled: false
+  auto_flag_minors: true
+  manual_review_required: true
+  pseudonymization: false
+
+# Export formats
+exports:
+  json: true
+  csv: true
+  html: false
+  markdown: false
+  neo4j_cypher: false
+
+# Performance
+performance:
+  max_file_size_mb: 100  # Skip files larger than this
+  memory_limit_mb: 4096  # Stop if memory usage exceeds
+  timeout_per_document_seconds: 300  # 5 minutes max per document
+
+# Quality control
+quality:
+  min_confidence_for_statistics: 0.80  # HIGH only
+  require_manual_review_below: 0.50  # MEDIUM and below
+  max_false_positive_rate: 0.10  # Target

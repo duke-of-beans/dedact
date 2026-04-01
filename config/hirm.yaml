@@ -1,0 +1,58 @@
+# HIRM Project Configuration
+# Medical research focus - clinical trials, FDA approvals
+
+corpus_id: "hirm"
+corpus_path: "D:/Research/HIRM/documents/"
+
+processing:
+  confidence_threshold: 0.65
+  ocr_enabled: true
+  parallel_workers: 6
+  extraction_depth: "comprehensive"
+
+entity_types:
+  - PERSON       # Researchers, doctors
+  - ORG          # Pharma companies, hospitals, institutions
+  - CHEMICAL     # Drug compounds, substances
+  - DISEASE      # Medical conditions
+  - MONEY        # Research funding, payments
+  - DATE         # Study dates, approval dates
+
+medical_entities:
+  chemicals:
+    - drug_compounds
+    - active_ingredients
+    - metabolites
+  diseases:
+    - conditions
+    - diagnoses
+    - side_effects
+
+network_analysis:
+  enabled: true
+  relationship_types:
+    - FUNDS          # Org funds research
+    - RESEARCHES     # Person researches chemical
+    - TREATS         # Chemical treats disease
+    - EMPLOYED_BY    # Person employed by org
+    - OWNS_PATENT    # Org owns chemical patent
+
+focus_areas:
+  - clinical_trial_funding
+  - researcher_conflicts
+  - institutional_relationships
+  - fda_approval_process
+
+output:
+  formats:
+    - json
+    - csv
+    - neo4j_cypher
+  directory: "output/hirm"
+
+integration:
+  mcp_server: true
+  external_dbs:
+    - pubmed
+    - clinicaltrials_gov
+    - wikidata
